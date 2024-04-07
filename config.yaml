@@ -1,39 +1,43 @@
 settings:
-  title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
+  title: 'Status dos Sistemas'
+  url: 'https://status.henriqueabreu.med.br' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
-  allmonitorsOperational: 'All Systems Operational'
-  notAllmonitorsOperational: 'Not All Systems Operational'
-  monitorLabelOperational: 'Operational'
-  monitorLabelNotOperational: 'Not Operational'
-  monitorLabelNoData: 'No data'
-  dayInHistogramNoData: 'No data'
-  dayInHistogramOperational: 'All good'
-  dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
+  allmonitorsOperational: 'Todos os sistemas estão operacionais'
+  notAllmonitorsOperational: 'Nem todos os sistemas estão operacionais'
+  monitorLabelOperational: 'Operacional'
+  monitorLabelNotOperational: 'Apresentando problemas'
+  monitorLabelNoData: 'Sem dados'
+  dayInHistogramNoData: 'Sem dados'
+  dayInHistogramOperational: 'Funcionamento normal'
+  dayInHistogramNotOperational: ' incidente(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
+  - id: passometro-hc # unique identifier
+    name: 'Passômetro - Tulio Navarro'
+    description: 'Passômetro Dr Túlio Navarro.' # default=empty
+    url: 'https://vascular.alp.med.br/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
+    followRedirect: true # should fetch follow redirects, default=false
     linkable: false # allows the title to be a link, default=true
 
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
-    method: GET
-    expectStatus: 200
-    linkable: true # allows the title to be a link, default=true
+  - id: passometro-baleia # unique identifier
+    name: 'Passômetro - Rodrigo Moreialvar'
+    description: 'Passômetro Dr Túlio Navarro.' # default=empty
+    url: 'https://baleia.alp.med.br/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: true # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
 
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
-    method: GET
-    expectStatus: 200
+  - id: bucho-mandaqui # unique identifier
+    name: 'Bucho - Mandaqui'
+    description: 'Bucho do mandaqui.' # default=empty
+    url: 'https://mandaqui.alp.med.br/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: true # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
