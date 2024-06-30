@@ -15,10 +15,19 @@ settings:
   dayInHistogramNotOperational: ' incidente(s)' # xx incident(s) recorded
 
 monitors:
-  - id: passometro-hc # unique identifier
+  - id: passometro # unique identifier
     name: 'Passômetro - Tulio Navarro'
     description: 'Passômetro Dr Túlio Navarro.' # default=empty
     url: 'https://vascular.alp.med.br/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: true # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
+
+  - id: passometro-hc # unique identifier
+    name: 'Passômetro - Tulio Navarro HC'
+    description: 'Passômetro Dr Túlio Navarro.' # default=empty
+    url: 'https://vascular-hc.alp.med.br/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: true # should fetch follow redirects, default=false
