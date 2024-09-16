@@ -2,7 +2,7 @@ settings:
   title: 'Situação Atual'
   url: 'https://status.henriqueabreu.med.br' # used for Slack messages
   logo: logotipo-henrique.png # image in ./public/ folder
-  daysInHistogram: 90 # number of days you want to display in histogram
+  daysInHistogram: 30 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
   allmonitorsOperational: 'Todos os sistemas estão operacionais'
@@ -31,22 +31,4 @@ monitors:
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: true # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
-
-  - id: passometro-baleia # unique identifier
-    name: 'Passômetro - Rodrigo Moreialvar'
-    description: 'Passômetro Dr Túlio Navarro.' # default=empty
-    url: 'https://baleia.alp.med.br/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: true # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
-
-  - id: bucho-mandaqui # unique identifier
-    name: 'Bucho - Mandaqui'
-    description: 'Bucho do mandaqui.' # default=empty
-    url: 'https://mandaqui.alp.med.br/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: true # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
+    linkable: false # allows the title to be a link, default=t
